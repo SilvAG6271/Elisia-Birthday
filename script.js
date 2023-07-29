@@ -1,16 +1,14 @@
-document.querySelector(".card-container").addEventListener("mousemove", function(e){
-   const rect = e.target.getBoundingClientRoot();
-   const x = e.client - rect.left;
-   const y = e.client - rect.top;
 
-   document.querySelector(".scratch-overlay").style.left = x + "px";
-   document.querySelector(".scratch-overlay").style.top = y + "px";
-});
 
-document.querySelector(".scratch-overlay").addEventListener("mousedown", function(){
-    document.querySelector(".hidden-image").style.display = "block";
-});
+   document.addEventListener("mousemove", function(e){
+   const body = document.querySelector("body");
+   const birthday = document.createElement("span");
+   // birthday.textContent = "Happy Birthday!";
+  
+   birthday.style.left = e.offsetX + "px";
+   birthday.style.top = e.offsetY + "px";
 
-document.querySelector(".scratch-overlay").addEventListener("mouseup", function(){
-    document.querySelector(".hidden-image").style.display = "none";
-});
+
+body.appendChild(birthday);
+
+ });
